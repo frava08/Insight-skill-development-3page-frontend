@@ -1,0 +1,256 @@
+
+
+<div class="container">
+    <!-- Image and Heading Section -->
+    <div class="text-center">
+      <img
+        style="margin-top: 10px"
+        src="https://i.postimg.cc/cJD1xKqh/myimage.jpg"
+        alt="My Image"
+        width="150"
+        height="150px"
+      />
+      <u><h1>INSIGHT SKILL DEVELOPMENT</h1></u>
+      <u><h1 style="margin-top: -5px">PROGRAM</h1></u>
+      <p>GT ROAD NEAR NADRA OFFICE MIAN CHANNU PH NO: 0315-690-4322</p>
+    </div>
+  
+    <!-- Application Section -->
+    <h2 style="background-color: rgba(26, 20, 20, 0.925); color: aliceblue">
+      APPLICATION
+    </h2>
+  
+    <form [formGroup]="inqform" (ngSubmit)="onSubmit()">
+      <!-- First Row: Program and Checkboxes -->
+      <div class="row">
+        <div class="col-md-6">
+          <label style="font-weight: 600">Program:</label>
+          <label style="margin-left: 35px">
+            Web Development <input type="checkbox" style="margin-left: 20px"  formControlName="webDev"    />
+          </label>
+          <br />
+          <label style="margin-left: 110px">
+            Graphic Designing
+            <input type="checkbox" style="margin-left: 14px"   formControlName="graphicDesign"      />
+          </label>
+          <br />
+          <label style="margin-left: 110px">
+            E-Commerce <input type="checkbox" style="margin-left: 50px"   formControlName="eCommerce"       />
+          </label>
+  
+          <div *ngIf="inqform.get('program')?.errors?.['onlyOneAllowed']" class="error">
+          
+  
+  
+  
+        </div>
+  
+        <!-- Date and ADM NO Section -->
+        <div class="col-md-6">
+          <label class="custom-label">DATE:</label>
+          <input style="width:310px; margin-left: 528px; margin-top: -70px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+          <label style="margin-left: 430px; margin-top: -18px; position: absolute;" for="adm-no">
+            ADM. NO.
+          </label>
+          <input style="width: 120px; margin-left: 530px; margin-top: -30px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+          <br />
+  
+          <!-- Morning and Evening Checkboxes -->
+          <label class="morning"  >
+            Morning <input type="checkbox"  formControlName="morning"      />
+          </label>
+          <br />
+          <label class="evening">
+            Evening <input type="checkbox"  formControlName="morning"      />
+          </label>
+  
+          <div *ngIf="inqform.get('checkbox')?.errors?.['checkbox']" class="error">
+            Please select only one session.
+          </div>
+  
+  
+  
+  
+        </div>
+      </div>
+  
+      <!-- Student Information Section -->
+      <h2 style="background-color: rgba(26, 20, 20, 0.925); color: aliceblue">
+        STUDENT INFORMATION
+      </h2>
+      <div class="row">
+        <div class="col-md-6">
+         
+          <label for="name">Name:</label>
+    <input style="width: 750px; margin-left: 50px; margin-top: -12px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  
+        </div> <br>
+        <div class="col-md-6">
+          <label for="name">FatherName:</label>
+          <input style="width: 750px; margin-left: 10px; margin-top: -12px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+        </div>
+  <br>
+  <div> 
+        <label  >Gender:</label>
+        <label class="male"  >
+          Male <input type="checkbox"    formControlName="evening"      />
+        </label>
+        
+        <div>
+        <label class="female">
+          Female<input type="checkbox" style="margin-left: 8px"   formControlName="female"/>
+        </label>
+  
+      
+      <div *ngIf="inqform.get('gender')?.errors?.['onlyOneAllowed']" class="error">
+        Please select only one gender.
+      </div>
+      
+  
+  
+  
+  
+  
+        <label  style="margin-left:500px ; position: absolute; margin-top: -15px ;"      for="Mobile Num">Mobile Number:</label>
+  
+        <input style="width: 170px; margin-left: 650px; margin-top: -33px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  
+        <label  style="margin-left:490px ; position: absolute; margin-top: 22px ;"      for="Mobile Num">Whatsapp Number:</label>
+  
+        <input style="width: 170px; margin-left: 650px; margin-top: 7px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  <br>
+  <label  style="position: absolute; margin-top:6px ;"      for="Mobile Num">Father Mobile Number :</label>
+  <input style="width: 170px; margin-left: 170px; margin-top: -10px ; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  
+  <label  style="position: absolute; margin-top: 60px ; font-size: large;"      for="Mobile Num">Address:</label>
+  <input style="width: 752px; margin-left: 93px; margin-top: 45px; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  
+  
+  
+  <br> <br>
+  
+  
+  <h3 style="margin-top: 95px; position: absolute;">Academic:</h3>
+  <table     class="academic-table">
+    <thead>
+      <tr>
+        <th>Institute</th>
+        <th>Level of Exam</th>
+        <th>Year of Passing</th>
+        <th>Roll No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="institute1" class="table-input"></td>
+        <td>Matric/O-Level</td>
+        <td><input type="text" name="year1" class="table-input"></td>
+        <td><input type="text" name="roll1" class="table-input"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="institute2" class="table-input"></td>
+        <td>Inter/A-Level</td>
+        <td><input type="text" name="year2" class="table-input"></td>
+        <td><input type="text" name="roll2" class="table-input"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="institute3" class="table-input"></td>
+        <td>Bachelor</td>
+        <td><input type="text" name="year3" class="table-input"></td>
+        <td><input type="text" name="roll3" class="table-input"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+  
+  <h3 style="text-align: center; margin-top:35px ; font-size: x-large;">DECLARATION</h3>
+  <p    style=" margin-left: 30px; margin-top:-20px  ; font-size: larger; "  >
+    I, Mr./Ms. 
+    <input type="text" class="underline-input" />  ,
+    s/d/o 
+    <input type="text" class="underline-input" /> an application for pre admission to Insight Skill Development Program
+    solemnly affirm and declare that all above information given by me is correct. 
+    I have read and understood the college Prospectus and terms and conditions of the admission procedure. 
+    I agree to abide by the rules and regulations of Insight Skill Development Program for the entire duration of the course of study. 
+    I will not object to any additional charges levied by College during the course of my studies.
+  </p>
+  
+  <div class="signature-section">
+    <div class="signature-box">
+  
+  
+      <label style=" font-weight: 800; font-size: large; margin-top:35px ; position: absolute; margin-left: -90px;">Applicant's Signature</label>
+   <input style="width: 290px; margin-left: -150px ;position: absolute; margin-top: -5px ;"  id="name" formControlName="name" class="underline-input" />
+  
+    </div>
+  
+    <div class="signature-box">
+      <label style=" font-weight: 800; font-size: large; margin-top:40px ; position: absolute; margin-left: -130px;">Signature Parent/Guardian</label>
+      <input style="width: 290px; margin-left: -180px ;position: absolute; margin-top: -3px ;"  id="name" formControlName="name" class="underline-input" />
+  
+  
+  
+  
+    </div>
+  </div>
+  
+  <h2 style="background-color: rgba(28, 27, 27, 0.925); color: aliceblue ; margin-top: 70px ; padding-left:5px ;">
+    FEE DETAIL
+  </h2>
+  
+  <p style="font-size: larger; margin-left: -1px ;">Total Fee Package : </p>
+  
+  
+  <input style="width: 790px; margin-left: 60px; margin-top: -15px; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  <input style="width: 840px; margin-left: 10px; margin-top: 35px; position: absolute;"  id="name" formControlName="name" class="underline-input" />
+  
+  <button   style="margin-top:100px ; margin-left:400px ;    background-color: black; color: aliceblue;  width: 100px ;  height: 40px ;"      type="submit" [disabled]="inqform.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div>
+  
+  <table *ngIf="submittedData.length > 0">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>ADM.NO</th>
+        <th>Name</th>
+        <th>Father name</th>
+        <th>Mobile number</th>
+        <th>Whatapp number</th>
+        <th>Adress</th>
+        <th>applicants signature</th>
+        <th>signature parent</th>
+        <th>Total fee package</th>
+      </tr>
+    </thead>
+     <tbody>
+      
+      <tr *ngFor="let data of submittedData">
+          <td>{{data.Data}}</td>
+          <td>{{data['ADM.NO']}}</td> <!-- If ADM.NO is a string property -->
+          <td>{{data.Name}}</td>
+          <td>{{data['Father name']}}</td>
+          <td>{{data['Mobile number']}}</td>
+          <td>{{data['Whatapp number']}}</td>
+          <td>{{data.Adress}}</td>
+          <td>{{data['applicants signature']}}</td>
+          <td>{{data['signature parent']}}</td>
+          <td>{{data['Total fee package']}}</td>
+      </tr>
+     </tbody>
+     <p *ngIf="submittedData.length === 0">No data submitted yet.</p>
+  
+  </table>
+  
+  
+  </div>
+  
+  
+  
+    
